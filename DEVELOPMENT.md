@@ -8,6 +8,9 @@
 
 - **配置文件**: `.eslintrc.js`
 - **忽略文件**: `.eslintignore`
+- 支持 TypeScript
+- 集成 Prettier
+- 自定义规则集
 - **命令**:
   - `npm run lint` - 检查代码规范
   - `npm run lint:fix` - 自动修复可修复的问题
@@ -16,6 +19,8 @@
 
 - **配置文件**: `.prettierrc.json`
 - **忽略文件**: `.prettierignore`
+- 统一代码格式
+- 支持多种文件类型
 - **命令**:
   - `npm run format` - 格式化所有代码
   - `npm run format:check` - 检查代码格式是否符合规范
@@ -23,6 +28,9 @@
 ### 3. Stylelint - CSS/SCSS/Less 样式检查
 
 - **配置文件**: `.stylelintrc.json`
+- 支持 CSS、SCSS、Less
+- 与 Prettier 集成
+- 现代化的样式规范
 - **命令**:
   - `npm run stylelint` - 检查样式文件
   - `npm run stylelint:fix` - 自动修复样式问题
@@ -30,6 +38,9 @@
 ### 4. Commitlint - Git 提交信息规范
 
 - **配置文件**: `commitlint.config.js`
+- 支持常规提交规范
+- 自定义提交类型
+- 中文注释说明
 - **支持的提交类型**:
   - `feat`: 新功能
   - `fix`: 修复bug
@@ -47,12 +58,29 @@
 
 - **Pre-commit hook**: 提交前自动运行 lint-staged
 - **Commit-msg hook**: 检查提交信息是否符合规范
+- 自动化代码质量控制
 
 ### 6. Lint-staged - 针对暂存文件运行检查
 
 - **TypeScript/JavaScript 文件**: ESLint + Prettier
 - **CSS/SCSS/Less 文件**: Stylelint + Prettier
 - **JSON/Markdown 文件**: Prettier
+- 支持常规提交规范
+- 自定义提交类型
+- 中文注释说明
+
+### 7. NPM 脚本命令配置
+
+```json
+{
+  "lint": "eslint src/**/*.ts",
+  "lint:fix": "eslint src/**/*.ts --fix",
+  "format": "prettier --write .",
+  "format:check": "prettier --check .",
+  "stylelint": "stylelint **/*.{css,scss,less}",
+  "stylelint:fix": "stylelint **/*.{css,scss,less} --fix"
+}
+```
 
 ## 开发工作流
 
