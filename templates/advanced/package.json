@@ -1,0 +1,19 @@
+{
+  "name": "advanced-template",
+  "version": "1.0.0",
+  "description": "An advanced template for scaffold-cli project.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.4",
+    "ts-node": "^10.4.0"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}
