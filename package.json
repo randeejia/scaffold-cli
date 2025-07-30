@@ -1,6 +1,6 @@
 {
   "name": "@randee/scaffold-cli",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A powerful CLI tool for scaffolding projects with template handling and build status notifications.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,7 +15,7 @@
     "README.md"
   ],
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=22.14.0"
   },
   "repository": {
     "type": "git",
