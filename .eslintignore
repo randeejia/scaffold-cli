@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.d.ts
+.eslintrc.js
+commitlint.config.js
+bin/
+templates/

@@ -1,0 +1,11 @@
+{
+  "name": "basic-template",
+  "version": "1.0.0",
+  "description": "A basic template for scaffold-cli projects.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
