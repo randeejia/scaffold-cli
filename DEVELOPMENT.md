@@ -195,3 +195,47 @@ git commit -m "fix: urgent fix" --no-verify
 ## 持续改进
 
 项目的代码规范会根据团队需求持续优化，如有建议请提出 issue 或 PR。
+
+## 发布和分发
+
+### 构建项目
+
+```bash
+# 清理之前的构建
+npm run clean
+
+# 构建项目
+npm run build
+
+# 监听模式构建（开发时使用）
+npm run build:watch
+```
+
+### 发布到 npm
+
+详细的发布指南请查看 [PUBLISH.md](./PUBLISH.md)
+
+```bash
+# 发布前检查
+npm run prepublishOnly
+
+# 发布（首次发布 scoped package）
+npm publish --access public
+
+# 后续发布
+npm publish
+```
+
+### 本地测试
+
+```bash
+# 链接到全局
+npm link
+
+# 测试命令
+scaffold-cli --help
+scaffold init
+
+# 取消链接
+npm unlink -g @randee/scaffold-cli
+```

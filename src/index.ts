@@ -3,10 +3,7 @@ import { createProject, generateProject } from './core/generator';
 
 const program = new Command();
 
-program
-  .name('scaffold-cli')
-  .description('A CLI tool for scaffolding projects')
-  .version('1.0.0');
+program.name('scaffold-cli').description('A CLI tool for scaffolding projects').version('1.0.0');
 
 program
   .command('init')
@@ -19,8 +16,7 @@ program
         type: 'input',
         name: 'projectName',
         message: 'What is the name of your project?',
-        validate: (input: string) =>
-          input ? true : 'Project name cannot be empty.',
+        validate: (input: string) => (input ? true : 'Project name cannot be empty.'),
       },
       {
         type: 'list',
@@ -44,8 +40,7 @@ program
         type: 'input',
         name: 'projectName',
         message: 'Enter the project name:',
-        validate: (input: string) =>
-          input ? true : 'Project name cannot be empty.',
+        validate: (input: string) => (input ? true : 'Project name cannot be empty.'),
       },
     ]);
 

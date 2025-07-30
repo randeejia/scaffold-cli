@@ -22,9 +22,7 @@ const createCommand = new Command('create')
 
     const { template, projectName } = answers;
     await generateProject(template, projectName);
-    console.log(
-      `Project ${projectName} created using the ${template} template.`
-    );
+    console.log(`Project ${projectName} created using the ${template} template.`);
   });
 
 export default createCommand;

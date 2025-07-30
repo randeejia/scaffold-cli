@@ -40,13 +40,8 @@ export class Generator {
 }
 
 // 导出简化的函数
-export async function createProject(
-  projectName: string,
-  template: string
-): Promise<void> {
-  const spinner = ora(
-    `Creating ${projectName} with ${template} template...`
-  ).start();
+export async function createProject(projectName: string, template: string): Promise<void> {
+  const spinner = ora(`Creating ${projectName} with ${template} template...`).start();
 
   try {
     // 创建项目目录
@@ -61,9 +56,7 @@ export async function createProject(
       copyDir(templatePath, projectPath);
     }
 
-    spinner.succeed(
-      chalk.green(`Project ${projectName} created successfully!`)
-    );
+    spinner.succeed(chalk.green(`Project ${projectName} created successfully!`));
     console.log(chalk.blue(`\nNext steps:`));
     console.log(chalk.white(`  cd ${projectName}`));
     console.log(chalk.white(`  npm install`));
@@ -74,10 +67,7 @@ export async function createProject(
   }
 }
 
-export async function generateProject(
-  template: string,
-  projectName: string
-): Promise<void> {
+export async function generateProject(template: string, projectName: string): Promise<void> {
   return createProject(projectName, template);
 }
 

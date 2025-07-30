@@ -16,10 +16,7 @@ class Template {
     // 简化的模板渲染 - 替换占位符
     let rendered = template;
     for (const [key, value] of Object.entries(data)) {
-      rendered = rendered.replace(
-        new RegExp(`{{\\s*${key}\\s*}}`, 'g'),
-        String(value)
-      );
+      rendered = rendered.replace(new RegExp(`{{\\s*${key}\\s*}}`, 'g'), String(value));
     }
     return rendered;
   }

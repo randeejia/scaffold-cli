@@ -1,16 +1,39 @@
 {
-  "name": "scaffold-cli",
+  "name": "@randee/scaffold-cli",
   "version": "1.0.0",
-  "description": "A CLI tool for scaffolding projects with template handling and build status notifications.",
-  "main": "src/index.ts",
+  "description": "A powerful CLI tool for scaffolding projects with template handling and build status notifications.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "bin": {
-    "scaffold-cli": "./bin/cli.js"
+    "scaffold-cli": "./bin/cli.js",
+    "scaffold": "./bin/cli.js"
+  },
+  "files": [
+    "dist/**/*",
+    "bin/**/*",
+    "templates/**/*",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/randee-jia/scaffold-cli.git"
+  },
+  "homepage": "https://github.com/randee-jia/scaffold-cli#readme",
+  "bugs": {
+    "url": "https://github.com/randee-jia/scaffold-cli/issues"
   },
   "scripts": {
-    "build": "node ./node_modules/typescript/bin/tsc",
-    "build:alt": "node_modules\\.bin\\tsc",
+    "build": "npm run clean && tsc",
+    "build:watch": "tsc --watch",
+    "clean": "rimraf dist",
     "start": "node ./bin/cli.js",
-    "dev": "node dist/index.js",
+    "dev": "npm run build && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run lint && npm run format:check && npm run build",
+    "postbuild": "cp -r templates dist/ || xcopy templates dist\\templates\\ /E /I",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
     "format": "prettier --write .",
